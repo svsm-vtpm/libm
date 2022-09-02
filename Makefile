@@ -1,10 +1,11 @@
 # SPDX-License-Identifier: MIT
 
 CFLAGS 		:= -I./include -I../libcrt/include -O3 -nostdinc -nostdlib
-CFLAGS		+= -m64 -march=x86-64 -mno-sse2 -mcrc32
+CFLAGS		+= -m64 -march=x86-64 -mno-sse2
 CFLAGS		+= -fno-stack-protector
 CFLAGS		+= -ffreestanding
 CC := gcc
+PREFIX := /usr/local/
 
 OBJS		+= $(addprefix src/, \
 			log.o \
@@ -21,6 +22,9 @@ OBJS		+= $(addprefix src/, \
 		    )
 
 all: libm.a
+
+install: all
+	cp libm.a $(PREFIX)
 
 libm.a: $(OBJS)
 	ar rcs $@ $(OBJS)
