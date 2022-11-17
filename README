@@ -1,0 +1,7 @@
+Some files borrowed from the musl libc project.
+
+Information on full musl-targeted compiler toolchains, system
+bootstrapping, and Linux distributions built on musl can be found on
+the musl project website:
+
+    http://www.musl-libc.org/
